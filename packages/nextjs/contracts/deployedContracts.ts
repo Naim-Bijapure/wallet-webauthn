@@ -4,6 +4,1679 @@
  */
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
-const deployedContracts = {} as const;
+const deployedContracts = {
+  31337: {
+    Wallet: {
+      address: "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+      abi: [
+        {
+          inputs: [
+            {
+              internalType: "string",
+              name: "_name",
+              type: "string",
+            },
+            {
+              internalType: "address",
+              name: "_owner",
+              type: "address",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "_walletPubKey",
+              type: "uint256[2]",
+            },
+            {
+              internalType: "address",
+              name: "_webauthn",
+              type: "address",
+            },
+          ],
+          stateMutability: "payable",
+          type: "constructor",
+        },
+        {
+          inputs: [],
+          name: "getBalance",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "getOwner",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes",
+              name: "_signature",
+              type: "bytes",
+            },
+          ],
+          name: "isValidSignature",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "name",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "owner",
+          outputs: [
+            {
+              internalType: "address payable",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "_recipient",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "_amount",
+              type: "uint256",
+            },
+            {
+              internalType: "bytes",
+              name: "_signature",
+              type: "bytes",
+            },
+          ],
+          name: "send",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          name: "walletPubKey",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "webauthn",
+          outputs: [
+            {
+              internalType: "contract WebAuthn",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          stateMutability: "payable",
+          type: "receive",
+        },
+      ],
+      inheritedFunctions: {},
+    },
+    WalletFactory: {
+      address: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+      abi: [
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "_webauthn",
+              type: "address",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "constructor",
+        },
+        {
+          inputs: [
+            {
+              internalType: "string",
+              name: "_name",
+              type: "string",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "_walletPubKey",
+              type: "uint256[2]",
+            },
+          ],
+          name: "deploy",
+          outputs: [],
+          stateMutability: "payable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          name: "userWallets",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "webauthn",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          stateMutability: "payable",
+          type: "receive",
+        },
+      ],
+      inheritedFunctions: {},
+    },
+    WebAuthn: {
+      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      abi: [
+        {
+          inputs: [],
+          name: "InvalidAuthenticatorData",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "InvalidClientData",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "InvalidSignature",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "x1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y1",
+              type: "uint256",
+            },
+          ],
+          name: "add",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "x2",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y2",
+              type: "uint256",
+            },
+          ],
+          name: "addAndReturnProjectivePoint",
+          outputs: [
+            {
+              internalType: "uint256[3]",
+              name: "P",
+              type: "uint256[3]",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "z0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "x1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "z1",
+              type: "uint256",
+            },
+          ],
+          name: "addProj",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "x2",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y2",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "z2",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes",
+              name: "authenticatorData",
+              type: "bytes",
+            },
+            {
+              internalType: "bytes1",
+              name: "authenticatorDataFlagMask",
+              type: "bytes1",
+            },
+            {
+              internalType: "bytes",
+              name: "clientData",
+              type: "bytes",
+            },
+            {
+              internalType: "string",
+              name: "clientChallenge",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "clientChallengeDataOffset",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "rs",
+              type: "uint256[2]",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "coordinates",
+              type: "uint256[2]",
+            },
+          ],
+          name: "checkSignature",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes",
+              name: "_signature",
+              type: "bytes",
+            },
+          ],
+          name: "decodeSignature",
+          outputs: [
+            {
+              internalType: "bytes",
+              name: "",
+              type: "bytes",
+            },
+            {
+              internalType: "bytes1",
+              name: "",
+              type: "bytes1",
+            },
+            {
+              internalType: "bytes",
+              name: "",
+              type: "bytes",
+            },
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "",
+              type: "uint256[2]",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes",
+              name: "_signature",
+              type: "bytes",
+            },
+          ],
+          name: "getChallenge",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y",
+              type: "uint256",
+            },
+          ],
+          name: "isOnCurve",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y0",
+              type: "uint256",
+            },
+          ],
+          name: "isZeroCurve",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "isZero",
+              type: "bool",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "scalar",
+              type: "uint256",
+            },
+          ],
+          name: "multiplyScalar",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "x1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y1",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "z0",
+              type: "uint256",
+            },
+          ],
+          name: "toAffinePoint",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "x1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y1",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y0",
+              type: "uint256",
+            },
+          ],
+          name: "toProjectivePoint",
+          outputs: [
+            {
+              internalType: "uint256[3]",
+              name: "P",
+              type: "uint256[3]",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y0",
+              type: "uint256",
+            },
+          ],
+          name: "twice",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "z0",
+              type: "uint256",
+            },
+          ],
+          name: "twiceProj",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "x1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "z1",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes",
+              name: "authenticatorData",
+              type: "bytes",
+            },
+            {
+              internalType: "bytes1",
+              name: "authenticatorDataFlagMask",
+              type: "bytes1",
+            },
+            {
+              internalType: "bytes",
+              name: "clientData",
+              type: "bytes",
+            },
+            {
+              internalType: "string",
+              name: "clientChallenge",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "clientChallengeDataOffset",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "rs",
+              type: "uint256[2]",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "coordinates",
+              type: "uint256[2]",
+            },
+          ],
+          name: "validate",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes32",
+              name: "message",
+              type: "bytes32",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "rs",
+              type: "uint256[2]",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "Q",
+              type: "uint256[2]",
+            },
+          ],
+          name: "validateSignature",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "zeroAffine",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "x",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "zeroProj",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "x",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "z",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+      ],
+      inheritedFunctions: {
+        add: "contracts/webauthn/EllipticCurve.sol",
+        addAndReturnProjectivePoint: "contracts/webauthn/EllipticCurve.sol",
+        addProj: "contracts/webauthn/EllipticCurve.sol",
+        isOnCurve: "contracts/webauthn/EllipticCurve.sol",
+        isZeroCurve: "contracts/webauthn/EllipticCurve.sol",
+        multiplyScalar: "contracts/webauthn/EllipticCurve.sol",
+        toAffinePoint: "contracts/webauthn/EllipticCurve.sol",
+        toProjectivePoint: "contracts/webauthn/EllipticCurve.sol",
+        twice: "contracts/webauthn/EllipticCurve.sol",
+        twiceProj: "contracts/webauthn/EllipticCurve.sol",
+        validateSignature: "contracts/webauthn/EllipticCurve.sol",
+        zeroAffine: "contracts/webauthn/EllipticCurve.sol",
+        zeroProj: "contracts/webauthn/EllipticCurve.sol",
+      },
+    },
+  },
+  11155111: {
+    Wallet: {
+      address: "0x0408259456C1fC786D4fa92eb915A2F5B0D5dcB8",
+      abi: [
+        {
+          inputs: [
+            {
+              internalType: "string",
+              name: "_name",
+              type: "string",
+            },
+            {
+              internalType: "address",
+              name: "_owner",
+              type: "address",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "_walletPubKey",
+              type: "uint256[2]",
+            },
+            {
+              internalType: "address",
+              name: "_webauthn",
+              type: "address",
+            },
+          ],
+          stateMutability: "payable",
+          type: "constructor",
+        },
+        {
+          inputs: [],
+          name: "getBalance",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "getOwner",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes",
+              name: "_signature",
+              type: "bytes",
+            },
+          ],
+          name: "isValidSignature",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "name",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "owner",
+          outputs: [
+            {
+              internalType: "address payable",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "_recipient",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "_amount",
+              type: "uint256",
+            },
+            {
+              internalType: "bytes",
+              name: "_signature",
+              type: "bytes",
+            },
+          ],
+          name: "send",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          name: "walletPubKey",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "webauthn",
+          outputs: [
+            {
+              internalType: "contract WebAuthn",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          stateMutability: "payable",
+          type: "receive",
+        },
+      ],
+      inheritedFunctions: {},
+    },
+    WalletFactory: {
+      address: "0xec6078E8f0aED8029D9B967844E0671B2528102E",
+      abi: [
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "_webauthn",
+              type: "address",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "constructor",
+        },
+        {
+          inputs: [
+            {
+              internalType: "string",
+              name: "_name",
+              type: "string",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "_walletPubKey",
+              type: "uint256[2]",
+            },
+          ],
+          name: "deploy",
+          outputs: [],
+          stateMutability: "payable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          name: "userWallets",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "webauthn",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          stateMutability: "payable",
+          type: "receive",
+        },
+      ],
+      inheritedFunctions: {},
+    },
+    WebAuthn: {
+      address: "0xC86e4485C16685A01ce6fcB7D5AcEF108B9B902E",
+      abi: [
+        {
+          inputs: [],
+          name: "InvalidAuthenticatorData",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "InvalidClientData",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "InvalidSignature",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "x1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y1",
+              type: "uint256",
+            },
+          ],
+          name: "add",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "x2",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y2",
+              type: "uint256",
+            },
+          ],
+          name: "addAndReturnProjectivePoint",
+          outputs: [
+            {
+              internalType: "uint256[3]",
+              name: "P",
+              type: "uint256[3]",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "z0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "x1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "z1",
+              type: "uint256",
+            },
+          ],
+          name: "addProj",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "x2",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y2",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "z2",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes",
+              name: "authenticatorData",
+              type: "bytes",
+            },
+            {
+              internalType: "bytes1",
+              name: "authenticatorDataFlagMask",
+              type: "bytes1",
+            },
+            {
+              internalType: "bytes",
+              name: "clientData",
+              type: "bytes",
+            },
+            {
+              internalType: "string",
+              name: "clientChallenge",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "clientChallengeDataOffset",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "rs",
+              type: "uint256[2]",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "coordinates",
+              type: "uint256[2]",
+            },
+          ],
+          name: "checkSignature",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes",
+              name: "_signature",
+              type: "bytes",
+            },
+          ],
+          name: "decodeSignature",
+          outputs: [
+            {
+              internalType: "bytes",
+              name: "",
+              type: "bytes",
+            },
+            {
+              internalType: "bytes1",
+              name: "",
+              type: "bytes1",
+            },
+            {
+              internalType: "bytes",
+              name: "",
+              type: "bytes",
+            },
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "",
+              type: "uint256[2]",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes",
+              name: "_signature",
+              type: "bytes",
+            },
+          ],
+          name: "getChallenge",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y",
+              type: "uint256",
+            },
+          ],
+          name: "isOnCurve",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y0",
+              type: "uint256",
+            },
+          ],
+          name: "isZeroCurve",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "isZero",
+              type: "bool",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "scalar",
+              type: "uint256",
+            },
+          ],
+          name: "multiplyScalar",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "x1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y1",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "z0",
+              type: "uint256",
+            },
+          ],
+          name: "toAffinePoint",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "x1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y1",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y0",
+              type: "uint256",
+            },
+          ],
+          name: "toProjectivePoint",
+          outputs: [
+            {
+              internalType: "uint256[3]",
+              name: "P",
+              type: "uint256[3]",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y0",
+              type: "uint256",
+            },
+          ],
+          name: "twice",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "x0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y0",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "z0",
+              type: "uint256",
+            },
+          ],
+          name: "twiceProj",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "x1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y1",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "z1",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes",
+              name: "authenticatorData",
+              type: "bytes",
+            },
+            {
+              internalType: "bytes1",
+              name: "authenticatorDataFlagMask",
+              type: "bytes1",
+            },
+            {
+              internalType: "bytes",
+              name: "clientData",
+              type: "bytes",
+            },
+            {
+              internalType: "string",
+              name: "clientChallenge",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "clientChallengeDataOffset",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "rs",
+              type: "uint256[2]",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "coordinates",
+              type: "uint256[2]",
+            },
+          ],
+          name: "validate",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes32",
+              name: "message",
+              type: "bytes32",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "rs",
+              type: "uint256[2]",
+            },
+            {
+              internalType: "uint256[2]",
+              name: "Q",
+              type: "uint256[2]",
+            },
+          ],
+          name: "validateSignature",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "zeroAffine",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "x",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "zeroProj",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "x",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "y",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "z",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+      ],
+      inheritedFunctions: {
+        add: "contracts/webauthn/EllipticCurve.sol",
+        addAndReturnProjectivePoint: "contracts/webauthn/EllipticCurve.sol",
+        addProj: "contracts/webauthn/EllipticCurve.sol",
+        isOnCurve: "contracts/webauthn/EllipticCurve.sol",
+        isZeroCurve: "contracts/webauthn/EllipticCurve.sol",
+        multiplyScalar: "contracts/webauthn/EllipticCurve.sol",
+        toAffinePoint: "contracts/webauthn/EllipticCurve.sol",
+        toProjectivePoint: "contracts/webauthn/EllipticCurve.sol",
+        twice: "contracts/webauthn/EllipticCurve.sol",
+        twiceProj: "contracts/webauthn/EllipticCurve.sol",
+        validateSignature: "contracts/webauthn/EllipticCurve.sol",
+        zeroAffine: "contracts/webauthn/EllipticCurve.sol",
+        zeroProj: "contracts/webauthn/EllipticCurve.sol",
+      },
+    },
+  },
+} as const;
 
 export default deployedContracts satisfies GenericContractsDeclaration;
